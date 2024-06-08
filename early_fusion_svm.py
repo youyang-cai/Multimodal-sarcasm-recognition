@@ -43,7 +43,7 @@ class FusionDataset(Dataset):
             text_feature = self.text_features[key]['text'].squeeze()
             if text_feature.requires_grad:
                 text_feature = text_feature.detach()
-            if text_feature.is_cu da:
+            if text_feature.is_cuda:
                 text_feature = text_feature.cpu()
             text_feature = text_feature.numpy()
         else:
